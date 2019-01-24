@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+      "target": "ES6"
+  },
+  "include": [
+      "src/**/*"
+  ]
+}
+
+// https://code.visualstudio.com/Docs/languages/javascript#_type-checking-and-quick-fixes-for-javascript-files
