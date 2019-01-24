@@ -1,9 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import ExpenseList from './ExpenseList';
+
 const ExpenseDashboardPage = () => (
   <div>
-    dashboard
+    <div>dashboard</div>
+    <ExpenseList/>
   </div>
 )
 
