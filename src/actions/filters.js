@@ -1,4 +1,4 @@
-import filters from "../reducers/filters";
+import recucerFilters from "../reducers/filters";
 
 // SET_TEXT_FILTER
 export const setTextFilter = (filter_text = '') => ({
