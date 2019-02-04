@@ -1,8 +1,11 @@
+// default to showing expense from the current month
+import moment from 'moment'
+
 const defaultFiltersState = {
   text: '',
   sortBy: 'date',
-  startDate: undefined,
-  endDate: undefined
+  startDate: moment().startOf('year'),
+  endDate: moment().endOf('month')
 }
 
 export default (state = defaultFiltersState, action) =>{

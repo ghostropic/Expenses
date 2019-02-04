@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import {removeExpense} from '../actions/expenses'
 
@@ -10,11 +10,9 @@ const toDollars = (pennies) => {
 
 const ExpenseListItem = ({id, description, dispatch, amount}) => (
   <div>
-    <span>{description}</span> <span>{toDollars(amount)}</span>
-    <button onClick={() => {
-      dispatch(removeExpense({id}))
-    }}>Remove</button>
+    <Link to={`/edit/${id}`}>{description}</Link>
+    <span>{toDollars(amount)}</span>
   </div>
 )
 
-export default connect()(ExpenseListItem)
+export default ExpenseListItem

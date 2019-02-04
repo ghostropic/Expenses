@@ -23,7 +23,7 @@ export const setStartDate = (start_date) => ({
 })
 
 // SET_END_DATE
-const setEndDate = (end_date) => ({
+export const setEndDate = (end_date) => ({
   type: 'SET_END_DATE',
   end_date
 })

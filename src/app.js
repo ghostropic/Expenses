@@ -17,7 +17,7 @@ const store = configureStore()
 store.subscribe(() => {
   const state = store.getState()
   const visibleState = selectExpenses(state.expenses, state.filters)
-  console.log(visibleState)
+  // console.log(visibleState)
 })
 
 store.dispatch(addExpense({description: 'gas bill', amount: 45000, createdAt: 211000}))
@@ -27,11 +27,11 @@ store.dispatch(addExpense({description: 'rent', amount: 215000, createdAt: 32100
 store.dispatch(addExpense({description: 'coffee', amount: 300, createdAt: 381000}))
 
 
-store.dispatch(actionFilters.setTextFilter('gas'))
+// store.dispatch(actionFilters.setTextFilter('gas'))
 
-setTimeout(() => {
-  store.dispatch(actionFilters.setTextFilter('bill'))
-}, 3000)
+// setTimeout(() => {
+//   store.dispatch(actionFilters.setTextFilter('bill'))
+// }, 3000)
 
 const jsx = (
   <Provider store={store}>
