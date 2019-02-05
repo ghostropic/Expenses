@@ -5,7 +5,7 @@ import {Provider} from 'react-redux'
 import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore'
 
-import selectExpenses from './selectors/expenses'
+// import selectExpenses from './selectors/expenses'
 
 import {addExpense} from './actions/expenses'
 import * as actionFilters from './actions/filters'
@@ -16,7 +16,7 @@ const store = configureStore()
 
 store.subscribe(() => {
   const state = store.getState()
-  const visibleState = selectExpenses(state.expenses, state.filters)
+  // const visibleState = selectExpenses(state.expenses, state.filters)
   // console.log(visibleState)
 })
 
