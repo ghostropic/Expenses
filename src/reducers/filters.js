@@ -1,10 +1,10 @@
-// default to showing expense from the current month
+// filtersReducer - default to showing expense from the current month
 import moment from 'moment'
 
 const defaultFiltersState = {
   text: '',
   sortBy: 'date',
-  startDate: moment().startOf('year'),
+  startDate: moment().startOf('month'),
   endDate: moment().endOf('month')
 }
 

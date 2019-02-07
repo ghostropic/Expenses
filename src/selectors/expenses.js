@@ -1,6 +1,7 @@
 import moment from 'moment'
 
-// getVisibleExpenses - passes expense and filters and determines what should be send along the expense list
+// selectExpenses
+// passes expenses and filters and determines what expenses should by visible in the expense list given the applied filters.
 
 export default (expenses, {text, sortBy, startDate, endDate}) => { // two arguments: expenses and destructured filters
   return expenses.filter((expense) => {
