@@ -1,12 +1,12 @@
-import {createStore, combineReducers} from 'redux'
+import { createStore, combineReducers } from 'redux'
 
-import expensesReducer from './../reducers/expenses'
-import filtersReducer from './../reducers/filters'
+import expensesReducer from '../reducers/expenses'
+import filtersReducer from '../reducers/filters'
 
 /* eslint-disable no-underscore-dangle */
 export default () => { // in order to return createStore from import
   const store = createStore(
-    combineReducers({ //combineReducers take a object -- this means any action dispatched will trigger all reducers to check action type
+    combineReducers({ // combineReducers take a object -- this means any action dispatched will trigger all reducers to check action type
       expenses: expensesReducer,
       filters: filtersReducer
     }),

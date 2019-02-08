@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import ExpenseForm from './ExpenseForm'
 import expenses from '../reducers/expenses'
 import { addExpense } from '../actions/expenses'
 
-const AddExpensePage = (props) => (
+const AddExpensePage = props => (
   <div>
     add expense:
     <ExpenseForm
