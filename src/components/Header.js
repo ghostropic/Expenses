@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const mainColor = 'palevioletred'
@@ -22,7 +22,7 @@ const StyledNavLink = styled(NavLink)`
 
 const Header = () => (
   <header>
-    <h1>HEADER</h1>
+    <h1>Expenses</h1>
     <StyledNavLink activeClassName="is-active" to="/" exact>Dashboard</StyledNavLink>
     <StyledNavLink activeClassName="is-active" to="/create" exact>Create Expense</StyledNavLink>
     <StyledNavLink activeClassName="is-active" to="/help" exact>Help</StyledNavLink>
