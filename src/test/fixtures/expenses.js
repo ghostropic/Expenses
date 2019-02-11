@@ -6,7 +6,7 @@ export default [{
   description: 'gum',
   note: 'one pack of bubble gum',
   amount: 195,
-  createdAt: 0
+  createdAt: moment(0)
 }, {
   id: '2',
   description: 'rent',

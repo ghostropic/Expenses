@@ -12,6 +12,7 @@
     }
   },
   "rules": {
+    "react/prop-types": 0,
     "strict": 0,
     "semi": "off",
     "comma-dangle": ["error", {

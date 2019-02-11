@@ -1,19 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-import { removeExpense } from '../actions/expenses'
+import moment from 'moment'
 
 const toDollars = (pennies) => {
   const dollars = pennies / 100;
   return dollars.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 
+const toDate = createdAt => moment(createdAt).format('MM/DD/YYYY h:mm a')
+
 const ExpenseListItem = ({
-  id, description, dispatch, amount
+  id,
+  description,
+  amount,
+  createdAt
 }) => (
   <div>
+    <p>{toDollars(amount)}</p>
     <Link to={`/edit/${id}`}>{description}</Link>
-    <span>{toDollars(amount)}</span>
+    <p>{toDate(createdAt)}</p>
+    <hr />
   </div>
 )
 
