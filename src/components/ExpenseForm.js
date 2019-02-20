@@ -1,9 +1,10 @@
 import React from 'react'
 import moment from 'moment'
 import { SingleDatePicker } from 'react-dates'
+import styled from 'styled-components'
 
+import { Input, Button, TextArea } from '../styles/style'
 import 'react-dates/initialize'
-import 'react-dates/lib/css/_datepicker.css'
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
@@ -65,26 +66,20 @@ export default class ExpenseForm extends React.Component {
   render() {
     return (
       <div>
-        <p>Expense Form:</p>
         <div>{this.state.error}</div>
         <form onSubmit={this.OnSubmit}>
-          <input
+          <Input
             value={this.state.description}
             onChange={this.onDescriptionChange}
             type="text"
             placeholder="description"
             autoFocus
           />
-          <input
+          <Input
             type="text"
             placeholder="amount"
             value={this.state.amount}
             onChange={this.onAmountChange}
-          />
-          <textarea
-            placeholder="Add a note to your expense."
-            value={this.state.note}
-            onChange={this.onNoteChange}
           />
           <SingleDatePicker
             date={this.state.createdAt} // momentPropTypes.momentObj or null
@@ -95,9 +90,18 @@ export default class ExpenseForm extends React.Component {
             numberOfMonths={1}
             isOutsideRange={() => false}
           />
-          <button>Add Expense</button>
+          <StyledButton background="transparent">Add Expense</StyledButton>
+          <TextArea
+            placeholder="Add a note to your expense."
+            value={this.state.note}
+            onChange={this.onNoteChange}
+          />
         </form>
       </div>
     )
   }
 }
+
+const StyledButton = styled.button`
+  ${Button};
+`

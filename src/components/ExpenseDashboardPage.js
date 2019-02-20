@@ -1,23 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import { utils } from '../styles/style'
 
-import ExpenseList from './ExpenseList';
+import ConnectedExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
 
 const ExpenseDashboardPage = () => (
-  <div>
-    <h2>dashboard</h2>
+  <Dashboard>
+    <p>Search expenses.</p>
     <ExpenseListFilters />
-    <ExpenseList />
-  </div>
+    <ConnectedExpenseList />
+  </Dashboard>
 )
 
-// const ExpenseDashboardPage = () => {
-//   return (
-//     <div>
-//       dashboard
-//     </div>
-//   )
-// }
+const Dashboard = styled.div`
+  padding: ${utils.border};
+  max-width: 800px;
+`
 
 export default ExpenseDashboardPage

@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
+import styled from 'styled-components'
+
+import { StyledLink } from '../styles/style'
 
 const toDollars = (pennies) => {
   const dollars = pennies / 100;
@@ -17,7 +20,7 @@ const ExpenseListItem = ({
 }) => (
   <div>
     <p>{toDollars(amount)}</p>
-    <Link to={`/edit/${id}`}>{description}</Link>
+    <StyledLink to={`/edit/${id}`}>{description}</StyledLink>
     <p>{toDate(createdAt)}</p>
     <hr />
   </div>

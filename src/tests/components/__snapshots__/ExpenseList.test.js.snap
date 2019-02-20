@@ -3,7 +3,7 @@
 exports[`should render ExpenseList with empty message 1`] = `
 <div>
   <p>
-    No Expense to list.
+    No Expense to list. Try clearing the date range.
   </p>
 </div>
 `;

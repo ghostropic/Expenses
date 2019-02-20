@@ -5,12 +5,11 @@ exports[`should render list of expenses 1`] = `
   <p>
     $1.95
   </p>
-  <Link
-    replace={false}
+  <style__StyledLink
     to="/edit/1"
   >
     gum
-  </Link>
+  </style__StyledLink>
   <p>
     12/31/1969 7:00 pm
   </p>

@@ -8,7 +8,7 @@ export const ExpenseList = ({ expenses }) => (
   <div>
     {
       expenses.length === 0
-        ? (<p>No Expense to list.</p>)
+        ? (<p>No Expense to list. Try clearing the date range.</p>)
         : (expenses.map(expense => <ExpenseListItem key={expense.id} {...expense} />))
     }
   </div>

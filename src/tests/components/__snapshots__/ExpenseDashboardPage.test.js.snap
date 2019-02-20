@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render dashboard correctly 1`] = `
-<div>
-  <h2>
-    dashboard
-  </h2>
+<ExpenseDashboardPage__Dashboard>
+  <p>
+    Search expenses.
+  </p>
   <Connect(ExpenseListFilters) />
   <Connect(ExpenseList) />
-</div>
+</ExpenseDashboardPage__Dashboard>
 `;

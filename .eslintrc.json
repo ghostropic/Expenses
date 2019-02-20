@@ -2,7 +2,8 @@
   "extends": ["airbnb", "plugin:react/recommended"],
   "env": {
     "es6": true,
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "parser": "babel-eslint",
   "parserOptions": {
@@ -22,6 +23,7 @@
       "exports": "never",
       "functions": "ignore"
     }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-unused-expressions": "off"
   }
 }
