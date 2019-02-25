@@ -9,8 +9,8 @@ import { addExpense } from '../actions/expenses'
 // define onSubmit inline which would be recalculated every render
 export class AddExpensePage extends React.Component {
   onSubmit = (expense) => {
-    const { addExpenseFromProps } = this.props
-    addExpenseFromProps(expense)
+    const { addExpenseAction } = this.props
+    addExpenseAction(expense)
 
     const { history } = this.props
     history.push('/')
@@ -33,13 +33,15 @@ const AddExpensePageWrapper = styled.div`
 `
 
 // 1
-export default connect(undefined, { addExpense })(AddExpensePage)
+// best if possible
+// export default connect(undefined, { addExpense })(AddExpensePage)
 
 // 2
-// const mapDispatchToProps = { //action creators
-//   addExpense
-// }
-// export default connect(undefined, mapDispatchToProps)(AddExpensePage)
+// need to use this one beacause there is a naming conflict with the prop and the action
+const mapDispatchToProps = {
+  addExpenseAction: addExpense
+}
+export default connect(undefined, mapDispatchToProps)(AddExpensePage)
 
 // 3
 // only decalre mapDispatchToProps as a function if you need to customize dispatching behavior.

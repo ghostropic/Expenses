@@ -1,3 +1,7 @@
 /node_modules
 
 /src/scratch
+
+public/bundle.js
+public/bundle.js.map
+public/fonts/*

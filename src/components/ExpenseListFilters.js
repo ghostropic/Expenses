@@ -13,44 +13,49 @@ import {
   setEndDate
 } from '../actions/filters'
 
-class ExpenseListFilters extends React.Component {
+export class ExpenseListFilters extends React.Component {
   state = {
     calendarFocused: null // string if we are focused on one of the calendars
   }
 
-  onDatesChange = ({ startDate, endDate }) => {
-    const { dispatch } = this.props
-    dispatch(setStartDate(startDate))
-    dispatch(setEndDate(endDate))
+  onTextChange = (e) => {
+    const { setTextFilterAction } = this.props
+    setTextFilterAction(e.target.value)
+  }
+
+  onSortChange = (e) => {
+    const { sortByDateAction, sortByAmountAction } = this.props
+    e.target.value === 'date'
+      ? sortByDateAction()
+      : sortByAmountAction()
   }
 
   onFocusChange = (calendarFocused) => {
     this.setState(() => ({ calendarFocused }))
   }
 
+  onDatesChange = ({ startDate, endDate }) => {
+    const { setStartDateAction, setEndDateAction } = this.props
+    setStartDateAction(startDate)
+    setEndDateAction(endDate)
+  }
+
   render() {
-    const { filters, dispatch } = this.props
+    const { filters } = this.props
     const { calendarFocused } = this.state
     return (
       <FiltersWrapper>
-        {/* {console.log('props', this.props)} */}
         <Input
           placeholder=" filter expenses"
           className="normalInput"
           type="text"
           value={filters.text}
-          onChange={(e) => {
-            dispatch(setTextFilter(e.target.value))
-          }}
+          onChange={this.onTextChange}
         />
         <select
           className="normalSelect"
           value={filters.sortBy}
-          onChange={(e) => {
-            e.target.value === 'date'
-              ? dispatch(sortByDate())
-              : dispatch(sortByAmount())
-          }}
+          onChange={this.onSortChange}
         >
           <option value="amount">Amount</option>
           <option value="date">Date</option>
@@ -101,4 +106,12 @@ const MapStateToProps = state => ({
   filters: state.filters
 })
 
-export default connect(MapStateToProps)(ExpenseListFilters)
+const MapDispatchToProps = {
+  setTextFilterAction: setTextFilter,
+  sortByDateAction: sortByDate,
+  sortByAmountAction: sortByAmount,
+  setStartDateAction: setStartDate,
+  setEndDateAction: setEndDate
+}
+
+export default connect(MapStateToProps, MapDispatchToProps)(ExpenseListFilters)

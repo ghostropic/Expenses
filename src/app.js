@@ -10,7 +10,6 @@ import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore'
 // import selectExpenses from './selectors/expenses'
 import { addExpense } from './actions/expenses'
-import 'font-awesome/css/font-awesome.css'
 
 const store = configureStore()
 

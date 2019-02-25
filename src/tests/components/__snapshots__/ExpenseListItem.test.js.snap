@@ -11,6 +11,9 @@ exports[`should render list of expenses 1`] = `
     gum
   </style__StyledLink>
   <p>
+    one pack of bubble gum
+  </p>
+  <p>
     12/31/1969 7:00 pm
   </p>
   <hr />
