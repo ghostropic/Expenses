@@ -28,13 +28,13 @@ module.exports = (env) => {
         SC_DISABLE_SPEEDY: true
       })
     ],
-    // devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       port: 3000,
       historyApiFallback: true,
       publicPath: '/dist/'
-    }
-    // mode: isProduction ? 'production' : 'development'
+    },
+    mode: isProduction ? 'production' : 'development'
   }
 }
