@@ -6,6 +6,7 @@ exports[`should render dashboard correctly 1`] = `
     Search expenses.
   </p>
   <Connect(ExpenseListFilters) />
+  <Connect(ExpenseSummary) />
   <Connect(ExpenseList) />
 </ExpenseDashboardPage__Dashboard>
 `;

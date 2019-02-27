@@ -3,10 +3,6 @@
 exports[`should render ExpenseList with empty message 1`] = `
 <div>
   <p>
-    Total: $0.00
-  </p>
-  <hr />
-  <p>
     No Expense to list. Try clearing the date range.
   </p>
 </div>
@@ -14,10 +10,6 @@ exports[`should render ExpenseList with empty message 1`] = `
 
 exports[`should render ExpenseList with expenses 1`] = `
 <div>
-  <p>
-    Total: $601.95
-  </p>
-  <hr />
   <ExpenseListItem
     amount={195}
     createdAt={0}

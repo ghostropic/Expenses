@@ -4,11 +4,13 @@ import { utils } from '../styles/style'
 
 import ConnectedExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
+import ExpenseSummary from './ExpenseSummary'
 
 const ExpenseDashboardPage = () => (
   <Dashboard>
     <p>Search expenses.</p>
     <ExpenseListFilters />
+    <ExpenseSummary />
     <ConnectedExpenseList />
   </Dashboard>
 )
