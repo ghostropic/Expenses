@@ -1,7 +1,8 @@
 import moment from 'moment'
 
 // selectExpenses
-// passes expenses and filters and determines what expenses should by visible in the expense list given the applied filters.
+// passes expenses and filters and determines what expenses should
+// be visible in the expense list given the applied filters.
 
 export default (expenses, {
   text, sortBy, startDate, endDate
@@ -18,5 +19,6 @@ export default (expenses, {
   } if (sortBy === 'amount') {
     return a.amount < b.amount ? 1 : -1
   }
+  return 0
 })
 // return [expenses, startDate]
