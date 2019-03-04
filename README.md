@@ -5,7 +5,7 @@ https://pacific-brushlands-92615.herokuapp.com/
 
 
 ## todo
-auth
-type checking
-linting
-CI/CD
+- auth
+- type checking
+- linting
+- CI/CD
