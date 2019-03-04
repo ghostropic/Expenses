@@ -1,3 +1,11 @@
+# Expenses
+A personal expense app with a lot of color.
+
+https://pacific-brushlands-92615.herokuapp.com/
+
+
 ## todo
-table of expenses to list, filter, sort etc.
-react-redux to get expenses from store to view
+auth
+type checking
+linting
+CI/CD
