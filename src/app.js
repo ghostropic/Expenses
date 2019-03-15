@@ -8,18 +8,19 @@ import { colors, utils } from './styles/style'
 
 import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore'
-// import selectExpenses from './selectors/expenses'
 import { addExpense } from './actions/expenses'
+import './firebase/firebase'
 
 const store = configureStore()
 
 // console.log(store.getState())
-// seed
-store.dispatch(addExpense({ description: 'gas bill', amount: 45000, createdAt: 211000 }))
-store.dispatch(addExpense({ description: 'water bill', amount: 15000, createdAt: 221000 }))
 
-store.dispatch(addExpense({ description: 'rent', amount: 215000, createdAt: 321000 }))
-store.dispatch(addExpense({ description: 'coffee', amount: 300, createdAt: 381000 }))
+// seed
+// store.dispatch(addExpense({ description: 'gas bill', amount: 45000, createdAt: 211000 }))
+// store.dispatch(addExpense({ description: 'water bill', amount: 15000, createdAt: 221000 }))
+
+// store.dispatch(addExpense({ description: 'rent', amount: 215000, createdAt: 321000 }))
+// store.dispatch(addExpense({ description: 'coffee', amount: 300, createdAt: 381000 }))
 
 // store.dispatch(actionFilters.setTextFilter('gas'))
 

@@ -1,3 +1,5 @@
 node_modules/
 public/dist/
 src/scratch
+.env.test
+.env.development
