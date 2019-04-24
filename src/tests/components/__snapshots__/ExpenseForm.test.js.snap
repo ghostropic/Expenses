@@ -108,11 +108,11 @@ exports[`should render ExpenseForm correctly 1`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
-    <ExpenseForm__StyledButton
-      background="transparent"
-    >
-      Add Expense
-    </ExpenseForm__StyledButton>
+    <Button__StyledButton
+      className="formButton"
+      text="Add Expense"
+      type="submit"
+    />
     <style__TextArea
       onChange={[Function]}
       placeholder="Add a note to your expense."
@@ -230,11 +230,11 @@ exports[`should render ExpenseForm with data 1`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
-    <ExpenseForm__StyledButton
-      background="transparent"
-    >
-      Add Expense
-    </ExpenseForm__StyledButton>
+    <Button__StyledButton
+      className="formButton"
+      text="Add Expense"
+      type="submit"
+    />
     <style__TextArea
       onChange={[Function]}
       placeholder="Add a note to your expense."
@@ -352,11 +352,11 @@ exports[`should render error when form is submitted incorrectly 1`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
-    <ExpenseForm__StyledButton
-      background="transparent"
-    >
-      Add Expense
-    </ExpenseForm__StyledButton>
+    <Button__StyledButton
+      className="formButton"
+      text="Add Expense"
+      type="submit"
+    />
     <style__TextArea
       onChange={[Function]}
       placeholder="Add a note to your expense."
@@ -476,11 +476,11 @@ exports[`should render error when form is submitted incorrectly 2`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
-    <ExpenseForm__StyledButton
-      background="transparent"
-    >
-      Add Expense
-    </ExpenseForm__StyledButton>
+    <Button__StyledButton
+      className="formButton"
+      text="Add Expense"
+      type="submit"
+    />
     <style__TextArea
       onChange={[Function]}
       placeholder="Add a note to your expense."

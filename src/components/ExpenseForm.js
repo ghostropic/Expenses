@@ -1,9 +1,9 @@
 import React from 'react'
 import moment from 'moment'
 import { SingleDatePicker } from 'react-dates'
-import styled from 'styled-components'
 
-import { Input, Button, TextArea } from '../styles/style'
+import StyledButton from './Button'
+import { Input, TextArea } from '../styles/style'
 import 'react-dates/initialize'
 
 export default class ExpenseForm extends React.Component {
@@ -49,26 +49,29 @@ export default class ExpenseForm extends React.Component {
 
   OnSubmit = (e) => {
     e.preventDefault()
-    if (!this.state.description || !this.state.amount) {
+    const { description, amount, note, createdAt } = this.state
+    const { onSubmit } = this.props
+    if (!description || !amount) {
       this.setState(() => ({ error: 'this is an error message' }))
     } else {
       this.setState(() => ({ error: '' }))
-      this.props.onSubmit({
-        description: this.state.description,
-        amount: parseFloat(this.state.amount, 10) * 100,
-        createdAt: this.state.createdAt.valueOf(),
-        note: this.state.note
+      onSubmit({
+        note,
+        description,
+        amount: parseFloat(amount, 10) * 100,
+        createdAt: createdAt.valueOf()
       })
     }
   }
 
   render() {
+    const { error, description, amount, note, createdAt, focused } = this.state
     return (
       <div>
-        <div>{this.state.error}</div>
+        <div>{error}</div>
         <form onSubmit={this.OnSubmit}>
           <Input
-            value={this.state.description}
+            value={description}
             onChange={this.onDescriptionChange}
             type="text"
             placeholder="description"
@@ -77,22 +80,26 @@ export default class ExpenseForm extends React.Component {
           <Input
             type="text"
             placeholder="amount"
-            value={this.state.amount}
+            value={amount}
             onChange={this.onAmountChange}
           />
           <SingleDatePicker
-            date={this.state.createdAt} // momentPropTypes.momentObj or null
+            date={createdAt} // momentPropTypes.momentObj or null
             onDateChange={this.onDateChange} // PropTypes.func.isRequired
-            focused={this.state.focused} // PropTypes.bool
+            focused={focused} // PropTypes.bool
             onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
             id="expense_form_calender" // PropTypes.string.isRequired,
             numberOfMonths={1}
             isOutsideRange={() => false}
           />
-          <StyledButton background="transparent">Add Expense</StyledButton>
+          <StyledButton
+            className="formButton"
+            text="Add Expense"
+            type="submit"
+            />
           <TextArea
             placeholder="Add a note to your expense."
-            value={this.state.note}
+            value={note}
             onChange={this.onNoteChange}
           />
         </form>
@@ -100,7 +107,3 @@ export default class ExpenseForm extends React.Component {
     )
   }
 }
-
-const StyledButton = styled.button`
-  ${Button};
-`

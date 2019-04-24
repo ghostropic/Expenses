@@ -20,11 +20,10 @@ exports[`should render EditExpensePage correctly 1`] = `
     }
     onSubmit={[Function]}
   />
-  <button
+  <Button__StyledButton
+    className="removeButton"
     onClick={[Function]}
-    type="button"
-  >
-    Remove
-  </button>
+    text="remove"
+  />
 </EditExpensePage__EditExpensePageWrapper>
 `;

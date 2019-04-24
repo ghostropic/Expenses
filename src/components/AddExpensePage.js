@@ -44,7 +44,7 @@ const AddExpensePageWrapper = styled.div`
 // export default connect(undefined, mapDispatchToProps)(AddExpensePage)
 
 // 3
-// only decalre mapDispatchToProps as a function if you need to customize dispatching behavior.
+// only declare mapDispatchToProps as a function if you need to customize dispatching behavior.
 const mapDispatchToProps = dispatch => ({
   addExpenseAction: expense => dispatch(startAddExpense(expense))
 })
