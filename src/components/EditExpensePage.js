@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Button from './Button'
 import ExpenseForm from './ExpenseForm'
-import { editExpense, startRemoveExpense } from '../actions/expenses';
+import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
 export class EditExpensePage extends React.Component {
   onSubmit = (expenseFromForm) => {
@@ -53,7 +53,7 @@ const mapStateToProps = (state, props) => ({
 
 const mapDispatchToProps = {
   removeExpenseAction: startRemoveExpense,
-  editExpenseAction: editExpense
+  editExpenseAction: startEditExpense
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage)
