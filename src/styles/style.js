@@ -35,16 +35,16 @@ export const TextArea = styled.textarea`
   border: none;
 `
 
-export const Button = css`
-  height: 48px;
-  display: inline-block;
-  padding: 0.5rem 0;
-  margin: 7px;
-  width: 11rem;
-  color: white;
-  border: 2px solid white;
-  background: ${props => props.background || 'palevioletred'};
- `
+// export const Button = css`
+//   height: 48px;
+//   display: inline-block;
+//   padding: 0.5rem 0;
+//   margin: 7px;
+//   width: 11rem;
+//   color: white;
+//   border: 2px solid white;
+//   background: ${props => props.background || 'palevioletred'};
+//  `
 
 export const StyledLink = styled(Link)`
   margin: 10px 0;

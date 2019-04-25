@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 
 import ExpenseForm from './ExpenseForm'
-import { addExpense } from '../actions/expenses'
+import { startAddExpense } from '../actions/expenses'
 
 // using a class here because we don't want to
 // define onSubmit inline which would be recalculated every render
@@ -38,14 +38,14 @@ const AddExpensePageWrapper = styled.div`
 
 // 2
 // need to use this one beacause there is a naming conflict with the prop and the action
-const mapDispatchToProps = {
-  addExpenseAction: addExpense
-}
-export default connect(undefined, mapDispatchToProps)(AddExpensePage)
+// const mapDispatchToProps = {
+//   addExpenseAction: startAddExpense
+// }
+// export default connect(undefined, mapDispatchToProps)(AddExpensePage)
 
 // 3
-// only decalre mapDispatchToProps as a function if you need to customize dispatching behavior.
-// const mapDispatchToProps = dispatch => ({
-//   addExpense: expense => dispatch(addExpense(expense))
-// })
-// export default connect(undefined, mapDispatchToProps)(AddExpensePage)
+// only declare mapDispatchToProps as a function if you need to customize dispatching behavior.
+const mapDispatchToProps = dispatch => ({
+  addExpenseAction: expense => dispatch(startAddExpense(expense))
+})
+export default connect(undefined, mapDispatchToProps)(AddExpensePage)

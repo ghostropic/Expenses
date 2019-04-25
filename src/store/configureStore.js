@@ -1,17 +1,25 @@
-import { createStore, combineReducers } from 'redux'
+import {
+  createStore,
+  combineReducers,
+  applyMiddleware,
+  compose
+} from 'redux'
+import ReduxThunk from 'redux-thunk'
 
 import expensesReducer from '../reducers/expenses'
 import filtersReducer from '../reducers/filters'
 
-/* eslint-disable no-underscore-dangle */
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_compose__ || compose
+
 export default () => { // in order to return createStore from import
   const store = createStore(
-    combineReducers({ // combineReducers take a object -- this means any action dispatched will trigger all reducers to check action type
+    // combineReducers takes an object -- this means any-
+    // action dispatched will trigger all reducers to check action type
+    combineReducers({
       expenses: expensesReducer,
       filters: filtersReducer
     }),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // redux dev tools ext
+    composeEnhancers(applyMiddleware(ReduxThunk))
   )
   return store
 }
-/* eslint-enable */

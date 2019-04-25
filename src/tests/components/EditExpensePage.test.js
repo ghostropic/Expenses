@@ -3,6 +3,7 @@ import { shallow } from 'enzyme'
 
 import { EditExpensePage } from '../../components/EditExpensePage'
 import expenses from '../fixtures/expenses'
+import Button from '../../components/Button'
 
 let editExpenseAction
 let removeExpenseAction
@@ -33,7 +34,7 @@ test('should handle onSubmit', () => {
 })
 
 test('should handle onClick to remove expense', () => {
-  wrapper.find('button').prop('onClick')()
+  wrapper.find(Button).prop('onClick')()
   expect(removeExpenseAction).toHaveBeenLastCalledWith(expenses[1])
   expect(history.push).toHaveBeenCalledWith('/')
 })

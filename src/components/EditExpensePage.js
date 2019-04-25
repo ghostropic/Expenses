@@ -2,19 +2,21 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
+import Button from './Button'
 import ExpenseForm from './ExpenseForm'
-import { editExpense, removeExpense } from '../actions/expenses';
+import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
 export class EditExpensePage extends React.Component {
-  onSubmit = (expense) => {
+  onSubmit = (expenseFromForm) => {
     const { history, editExpenseAction } = this.props
-    const { id } = this.props.expense
-    editExpenseAction(id, expense)
+    const { expense } = this.props
+    editExpenseAction(expense.id, expenseFromForm)
     history.push('/')
   }
 
   onRemove = () => {
     const { history, expense, removeExpenseAction } = this.props
+    // const remove = confirm('Are you sure you want to remove this expense?')
     removeExpenseAction(expense)
     history.push('/')
   }
@@ -31,12 +33,11 @@ export class EditExpensePage extends React.Component {
           expense={expense}
           onSubmit={this.onSubmit}
         />
-        <button
+        <Button
+          className="removeButton"
           onClick={this.onRemove}
-          type="button"
-        >
-          Remove
-        </button>
+          text="remove"
+        />
       </EditExpensePageWrapper>
     )
   }
@@ -51,8 +52,8 @@ const mapStateToProps = (state, props) => ({
 })
 
 const mapDispatchToProps = {
-  removeExpenseAction: removeExpense,
-  editExpenseAction: editExpense
+  removeExpenseAction: startRemoveExpense,
+  editExpenseAction: startEditExpense
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage)

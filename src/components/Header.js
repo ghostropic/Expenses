@@ -33,7 +33,8 @@ const StyledNavLink = styled(NavLink)`
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  margin: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
   color: ${colors.night};
   &.is-active {
     color: ${colors.grape};
