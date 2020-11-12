@@ -8,5 +8,3 @@ https://pacific-brushlands-92615.herokuapp.com/
 - auth
 - db
 - type checking
-- linting
-- CI/CD
